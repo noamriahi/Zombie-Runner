@@ -182,7 +182,6 @@ GameObject:
   - component: {fileID: 11400004}
   - component: {fileID: 1958926733}
   - component: {fileID: 6208249665995486111}
-  - component: {fileID: 8439402127327345729}
   - component: {fileID: 8373231499076404050}
   m_Layer: 0
   m_Name: Player
@@ -331,23 +330,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
---- !u!114 &8439402127327345729
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e369494c53e0f94c9cbf19468bc1e70, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fpsCamera: {fileID: 2000000}
-  zoomedOutFOV: 60
-  zoomeedInFOV: 20
-  zoomOutSensitivity: 2
-  zoomInSensitivity: 0.5
 --- !u!114 &8373231499076404050
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,6 +352,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2207992890528062055}
+  - component: {fileID: 3646988728489173810}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -388,30 +371,25 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8064238325777932340}
-  - {fileID: 3848804309562958830}
   - {fileID: 4187998233318912894}
+  - {fileID: 3848804309562958830}
+  - {fileID: 8064238325777932340}
   m_Father: {fileID: 400000}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &47050427
+--- !u!114 &3646988728489173810
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8064238325777710100}
+  m_GameObject: {fileID: 6354091860331974653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0610c8da2cea0b346bd2300123ab8593, type: 3}
+  m_Script: {fileID: 11500000, guid: 5c902d674eba3024bab535d91fb8a19b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FPCamera: {fileID: 2000000}
-  range: 100
-  damage: 15
-  muzzleFlash: {fileID: 4674118207783991694}
-  hitEffect: {fileID: 8109260744004481763, guid: 175b3310a8cc51844b61265a60d13000, type: 3}
-  ammoSlot: {fileID: 8373231499076404050}
+  currentWeapon: 0
 --- !u!1001 &1515258620969509960
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -497,9 +475,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pistole
       objectReference: {fileID: 0}
+    - target: {fileID: 1477722391941156, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4487492164278536, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4487492164278536, guid: 4b4193be53e751147ac305034c03fe35, type: 3}
       propertyPath: m_LocalScale.x
@@ -575,20 +557,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2207992890528062055}
     m_Modifications:
+    - target: {fileID: 47050427, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: FPCamera
+      value: 
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 47050427, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: ammoSlot
+      value: 
+      objectReference: {fileID: 8373231499076404050}
     - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
       propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-      propertyPath: m_LocalScale.z
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
@@ -635,28 +613,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Carbine
       objectReference: {fileID: 0}
-    - target: {fileID: 2337074158997199750, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2337074158999389510, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+    - target: {fileID: 5921841860158177541, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: fpsCamera
       value: 
-      objectReference: {fileID: 2100000, guid: 7ba0261a0661ca64faefab76afe3e413, type: 2}
+      objectReference: {fileID: 2000000}
+    - target: {fileID: 5921841860158177541, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
+      propertyPath: FPcontroller
+      value: 
+      objectReference: {fileID: 11400004}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
---- !u!1 &8064238325777710100 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2337074158997199750, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-  m_PrefabInstance: {fileID: 5730578287983847314}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8064238325777932340 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2337074158996965286, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
-  m_PrefabInstance: {fileID: 5730578287983847314}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &4674118207783991694 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 1106433232149257756, guid: ada2587319194f542957a8c2ae277cb9, type: 3}
   m_PrefabInstance: {fileID: 5730578287983847314}
   m_PrefabAsset: {fileID: 0}

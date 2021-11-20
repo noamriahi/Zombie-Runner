@@ -255,7 +255,8 @@ GameObject:
   - component: {fileID: 2337074158996965286}
   - component: {fileID: 2337074159000356742}
   - component: {fileID: 2337074158999389510}
-  - component: {fileID: 656040944122304418}
+  - component: {fileID: 5921841860158177541}
+  - component: {fileID: 47050427}
   m_Layer: 0
   m_Name: Carbine
   m_TagString: Untagged
@@ -272,7 +273,7 @@ Transform:
   m_GameObject: {fileID: 2337074158997199750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 2337074158996965284}
   - {fileID: 2337074158996965280}
@@ -310,7 +311,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 25f311c6bbd46e0448befa180cda78ed, type: 2}
+  - {fileID: 2100000, guid: 7ba0261a0661ca64faefab76afe3e413, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -332,7 +333,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &656040944122304418
+--- !u!114 &5921841860158177541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337074158997199750}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e369494c53e0f94c9cbf19468bc1e70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fpsCamera: {fileID: 0}
+  FPcontroller: {fileID: 0}
+  zoomedOutFOV: 60
+  zoomeedInFOV: 20
+  zoomOutSensitivity: 2
+  zoomInSensitivity: 0.5
+--- !u!114 &47050427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -345,11 +364,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FPCamera: {fileID: 0}
-  range: 100
-  damage: 15
+  range: 50
+  damage: 30
   muzzleFlash: {fileID: 1106433232149257756}
   hitEffect: {fileID: 8109260744004481763, guid: 175b3310a8cc51844b61265a60d13000, type: 3}
   ammoSlot: {fileID: 0}
+  timeBetweenShots: 1
 --- !u!1 &2337074158997199752
 GameObject:
   m_ObjectHideFlags: 0
