@@ -43,6 +43,10 @@ public class EnemyAI : MonoBehaviour
             AttackTarget();
         }
     }
+    public void OnDamageTaken()
+    {
+        isProvoked = true;
+    }
     private void ChaseTarget()
     {
 
