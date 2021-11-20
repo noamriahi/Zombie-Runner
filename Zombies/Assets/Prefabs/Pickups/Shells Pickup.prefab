@@ -12,20 +12,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 105106250096553368, guid: d30fb0da4d3d9744da036f2c8fad0632, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 105106250096553368, guid: d30fb0da4d3d9744da036f2c8fad0632, type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 1034362615302698740, guid: d30fb0da4d3d9744da036f2c8fad0632, type: 3}
-      propertyPath: ammoType
-      value: 2
+    - target: {fileID: 6366741349624676984, guid: d30fb0da4d3d9744da036f2c8fad0632, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7130554140290890227, guid: d30fb0da4d3d9744da036f2c8fad0632, type: 3}
       propertyPath: m_Name
-      value: Rocket Pickup
+      value: Shells Pickup
       objectReference: {fileID: 0}
     - target: {fileID: 7928194296912061493, guid: d30fb0da4d3d9744da036f2c8fad0632, type: 3}
       propertyPath: m_RootOrder
