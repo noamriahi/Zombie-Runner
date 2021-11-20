@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class AmmoPickup : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] int ammoAmount=5;
+    [SerializeField] AmmoType ammoType;
+    private void OnTriggerEnter(Collider other)
     {
         
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        if(other.gameObject.tag == "Player")
+        {
+            FindObjectOfType<Ammo>().IncreaseCurrentAmmo(ammoType, ammoAmount);
+            Destroy(gameObject);
+        }
         
     }
 }
