@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Ammo : MonoBehaviour
 {
     [SerializeField] AmmoSlot[] ammoSlots;
+    [SerializeField] TextMeshProUGUI TextPro;
     [System.Serializable]
     private class AmmoSlot
     {
         public AmmoType ammoType;
         public int ammoAmount;
+        
     }
-
 
     public int GetCurrentAmmo(AmmoType ammoType)
     {
