@@ -15,11 +15,12 @@ public class Weapon : MonoBehaviour
     [SerializeField] float timeBetweenShots = 0.5f;
     [SerializeField] TextMeshProUGUI TextPro;
     bool canShoot = true;
-
+    AudioSource shootSFX;
     float hitTime = 0.1f;
 
     private void OnEnable()
     {
+        shootSFX = GetComponent<AudioSource>();
         canShoot = true;
     }
     void Update()
@@ -44,6 +45,7 @@ public class Weapon : MonoBehaviour
         {
             PlayMuzzleFlash();
             ProcessRaycast();
+            PlayShootSFX();
             ammoSlot.ReduceCurrentAmmo(ammoType);
         }
         yield return new WaitForSeconds(timeBetweenShots);
@@ -53,6 +55,10 @@ public class Weapon : MonoBehaviour
     private void PlayMuzzleFlash()
     {
         muzzleFlash.Play();
+    }
+    private void PlayShootSFX()
+    {
+        shootSFX.Play();
     }
 
     private void ProcessRaycast()
