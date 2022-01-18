@@ -5,11 +5,17 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] float health = 100f;
+    [SerializeField] ProgressBar Pb;
 
+    private void Start()
+    {
+        Pb.BarValue = health;
+    }
     public void TakeDamage(float damage)
     {
         health -= damage;
-        if(health <= 0)
+        Pb.BarValue = health;
+        if (health <= 0)
         {
             GetComponent<DeathHandler>().HundleDeath();
         }

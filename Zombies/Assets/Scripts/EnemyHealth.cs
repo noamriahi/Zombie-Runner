@@ -25,5 +25,11 @@ public class EnemyHealth : MonoBehaviour
         if(isDead) return;
             GetComponent<Animator>().SetTrigger("die");
             isDead=true;
+        StartCoroutine("dissapear");
+    }
+    IEnumerator dissapear()
+    {
+        yield return new WaitForSeconds(5f);
+        Destroy(gameObject);
     }
 }
