@@ -16,8 +16,14 @@ public class EnemyAttack : MonoBehaviour
 
     public void AttachHitEvent()
     {
+        StartCoroutine("backMove");
         if(target == null) return;
         target.TakeDamage(damage);
         damagePlayer.GetDamage();
+    }
+    IEnumerator backMove()
+    {
+        yield return new WaitForSeconds(4f);
+        GetComponent<Animator>().SetBool("attack", false);
     }
 }
